@@ -5,9 +5,7 @@
  */
 package homework_5;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
+import java.util.*;
 
 /**
  *
@@ -17,25 +15,72 @@ public class Homework_5 {
 
     public static int numChars(ArrayList<String> a) {
         int num = 0;
-        for (Iterator<String> it = a.iterator(); it.hasNext();) {
+        for (ListIterator<String> it = a.listIterator(); it.hasNext();) {
             String i = it.next();
             num += i.length();
         }
         return num;
     }
 
+    public static void printAlliterations(ArrayList<String> a, ArrayList<String> comp) {
+        System.out.println("First Letter Alliterations:");
+        for (ListIterator<String> it = a.listIterator(); it.hasNext();) {
+            if (it.hasPrevious()) {
+                String p = it.previous();
+                it.next();
+                String i = it.next();
+                if (p.charAt(0) == i.charAt(0)) {
+                    if (comp.contains(i) || comp.contains(p)) {
+                    } else {
+                        System.out.println(p + " " + i);
+                    }
+                }
+            } else {
+                it.next();
+            }
+        }
+    }
+
+    public static void countChars(ArrayList<String> a) {
+        Map<Character, Integer> counts = new HashMap<Character, Integer>();
+        for (Iterator<String> it = a.iterator(); it.hasNext();) {
+            String i = it.next();
+            char[] dst = new char[i.length()];
+            i.getChars(0, i.length(), dst, 0);
+            for (int j = 0; j < dst.length; j++) {
+                if (!counts.containsKey(dst[j])) {
+                    counts.put(dst[j], 1);
+                }
+                else{
+                    counts.put(dst[j], counts.get(dst[j]) + 1);
+                }
+            }
+        }
+        Set<Map.Entry<Character, Integer>> countSet = counts.entrySet();
+        System.out.println("Character Occurences:");
+        for(Iterator<Map.Entry<Character, Integer>> pit = countSet.iterator(); pit.hasNext();){
+            Map.Entry<Character, Integer> k = pit.next();
+            System.out.println(k.getKey() + ": " + k.getValue());
+        }
+        
+    }
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        String[] allit = {"A", "AN", "AND", "THE", "TO", "OR", "ARE", "AM", "I", "OF", "IS", "AT", "DO", "DOES"};
         ArrayList<String> frankenstein = new ArrayList<String>(Arrays.asList(words));
+        ArrayList<String> nonAllit = new ArrayList<String>(Arrays.asList(allit));
         int numChar = numChars(frankenstein);
         int numWord = frankenstein.size();
         double avgChar = (double) numChar / (double) numWord;
         System.out.println("Number of Characters: " + numChar);
         System.out.println("Number of Words: " + numWord);
         System.out.println("Average Number of Characters per word: " + avgChar);
-        
+        printAlliterations(frankenstein, nonAllit);
+        countChars(frankenstein);
+
     }
 
     static String[] words = {"YOU", "WILL", "REJOICE", "TO", "HEAR", "THAT", "NO", "DISASTER", "HAS",
