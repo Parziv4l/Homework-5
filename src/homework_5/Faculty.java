@@ -9,6 +9,7 @@ package homework_5;
  *
  * @author NicKLz
  */
-public class Faculty {
-    
+public class Faculty extends Employee {
+    String officeHours;
+    String rank;
 }

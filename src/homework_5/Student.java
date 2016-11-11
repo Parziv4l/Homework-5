@@ -9,7 +9,23 @@ package homework_5;
  *
  * @author NicKLz
  */
-public class Student extends Person{
-    enum class_status {FRESHMAN, sOPHOMORE, JUNIOR, SENIOR}
-    
+enum Class_Status {
+    FRESHMAN, SOPHOMORE, JUNIOR, SENIOR
+}
+
+public class Student extends Person {
+
+    private final Class_Status status;
+
+    public Student(String n, String add, String num, String mail, Class_Status stat) {
+        this.name = n;
+        this.address = add;
+        this.number = num;
+        this.email = mail;
+        this.status = stat;
+    }
+
+    public Class_Status getStatus() {
+        return this.status;
+    }
 }

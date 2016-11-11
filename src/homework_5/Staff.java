@@ -9,6 +9,7 @@ package homework_5;
  *
  * @author NicKLz
  */
-public class Staff {
+public class Staff extends Employee{
+    String title;
     
 }

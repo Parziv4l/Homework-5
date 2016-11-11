@@ -11,8 +11,21 @@ import java.util.Date;
  *
  * @author NicKLz
  */
-public class Employee extends Person {
-    int office;
-    double salary;
-    Date hired;
+public abstract class Employee extends Person {
+
+    protected int office;
+    protected double salary;
+    protected Date hired;
+
+    public int getOffice() {
+        return this.office;
+    }
+
+    public double getSalary() {
+        return this.salary;
+    }
+
+    public Date getDateHired() {
+        return this.hired;
+    }
 }

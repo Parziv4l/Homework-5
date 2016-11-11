@@ -9,20 +9,16 @@ package homework_5;
  *
  * @author NicKLz
  */
-public class Person {
+public abstract class Person {
 
-    String name;
-    String address;
-    String number;
-    String email;
+    protected String name;
+    protected String address;
+    protected String number;
+    protected String email;
 
-    public Person(String n, String add, String num, String mail) {
-        name = n;
-        address = add;
-        number = num;
-        email = mail;
+    protected Person() {
     }
-    
+
     public String getName() {
         return name;
     }
