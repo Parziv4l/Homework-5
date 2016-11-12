@@ -30,4 +30,17 @@ public abstract class Employee extends Person {
     }
     
     public String toString(){return super.toString() + "\nOffice: " + this.office + "\nSalary: " + this.salary + "\nDate Hired: " + this.hired;}
+    
+    public class Faculty extends Employee {
+        String officeHours, rank;
+            
+        public String toString(){return super.toString() + "\noffice Hours: " + this.officeHours + "\nRank: " +this.rank;}
+    }
+    
+    public class Staff extends Employee{
+        String title;
+    
+        public String toString(){return super.toString() + "\nTitle: " + this.title;}
+    }   
+
 }

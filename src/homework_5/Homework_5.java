@@ -5,7 +5,9 @@
  */
 package homework_5;
 
+
 import java.util.*;
+
 
 /**
  *
@@ -62,15 +64,30 @@ public class Homework_5 {
             Map.Entry<Character, Integer> k = pit.next();
             System.out.println(k.getKey() + ": " + k.getValue());
         }
-        
-        int input = 1;
-        while(input !=0){
-            System.out.println("Please select an option: ");
-            
-        }
-        
     }
 
+    
+    private static void testPerson() {
+        Scanner s = new Scanner(System.in);
+        int input = 0;
+        do{
+            System.out.println("Please Select an option: \n1-Add Student \n2-Add Faculty \n3-Add Staff \n4-View Details");
+            switch(input){
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    switch(input){
+                        case 1:
+                    }
+                default:
+            }
+        }while(input != 0);
+        
+    }
     /**
      * @param args the command line arguments
      */
@@ -86,7 +103,9 @@ public class Homework_5 {
         System.out.println("Average Number of Characters per word: " + avgChar);
         printAlliterations(frankenstein, nonAllit);
         countChars(frankenstein);
-
+        Person p = new Student("Hunter Stewart", "3507 Wellspring lake drive, \nFulshear, TX 77441", "7138555655", "hstewart@tamu.edu", Class_Status.SOPHOMORE);
+        System.out.println(p);
+        //testPerson();
     }
 
     static String[] words = {"YOU", "WILL", "REJOICE", "TO", "HEAR", "THAT", "NO", "DISASTER", "HAS",
@@ -258,4 +277,6 @@ public class Homework_5 {
         "DEJECTION", "I", "SHALL", "COMMIT", "MY",
         "THOUGHTS", "TO", "PAPER"
     };
+
+    
 }

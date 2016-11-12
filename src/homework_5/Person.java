@@ -11,12 +11,25 @@ package homework_5;
  */
 public abstract class Person {
 
-    protected String name;
-    protected String address;
-    protected String number;
-    protected String email;
+    protected String name, address, number, email;
 
     protected Person() {
+    }
+
+    public void setName(String n) {
+        this.name = n;
+    }
+
+    public void setNumber(String n) {
+        this.number = n;
+    }
+
+    public void setAddress(String n) {
+        this.address = n;
+    }
+
+    public void setEmail(String n) {
+        this.email = n;
     }
 
     public String getName() {
@@ -34,8 +47,8 @@ public abstract class Person {
     public String getEmail() {
         return email;
     }
-    
-    public String toString(){
+
+    public String toString() {
         return name + " " + "\n" + address + "\n" + number + "\n" + email;
     }
 }

@@ -9,12 +9,9 @@ package homework_5;
  *
  * @author NicKLz
  */
-enum Class_Status {
-    FRESHMAN, SOPHOMORE, JUNIOR, SENIOR
-}
+
 
 public class Student extends Person {
-
     private final Class_Status status;
 
     public Student(String n, String add, String num, String mail, Class_Status stat) {
