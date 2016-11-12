@@ -34,5 +34,8 @@ public abstract class Person {
     public String getEmail() {
         return email;
     }
-
+    
+    public String toString(){
+        return name + " " + "\n" + address + "\n" + number + "\n" + email;
+    }
 }

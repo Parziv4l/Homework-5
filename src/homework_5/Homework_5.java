@@ -63,6 +63,12 @@ public class Homework_5 {
             System.out.println(k.getKey() + ": " + k.getValue());
         }
         
+        int input = 1;
+        while(input !=0){
+            System.out.println("Please select an option: ");
+            
+        }
+        
     }
 
     /**

@@ -12,4 +12,5 @@ package homework_5;
 public class Staff extends Employee{
     String title;
     
+    public String toString(){return super.toString() + "\nTitle: " + this.title;}
 }

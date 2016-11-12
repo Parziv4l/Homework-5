@@ -12,4 +12,6 @@ package homework_5;
 public class Faculty extends Employee {
     String officeHours;
     String rank;
+    
+    public String toString(){return super.toString() + "\noffice Hours: " + this.officeHours + "\nRank: " +this.rank;}
 }

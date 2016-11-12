@@ -28,4 +28,6 @@ public abstract class Employee extends Person {
     public Date getDateHired() {
         return this.hired;
     }
+    
+    public String toString(){return super.toString() + "\nOffice: " + this.office + "\nSalary: " + this.salary + "\nDate Hired: " + this.hired;}
 }
