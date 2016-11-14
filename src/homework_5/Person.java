@@ -48,7 +48,6 @@ public abstract class Person {
         return email;
     }
 
-    public String toString() {
-        return name + " " + "\n" + address + "\n" + number + "\n" + email;
-    }
+    @Override
+    abstract public String toString();
 }

@@ -5,9 +5,8 @@
  */
 package homework_5;
 
-
 import java.util.*;
-
+import jdk.nashorn.internal.objects.Global;
 
 /**
  *
@@ -44,7 +43,7 @@ public class Homework_5 {
     }
 
     public static void countChars(ArrayList<String> a) {
-        Map<Character, Integer> counts = new HashMap<Character, Integer>();
+        Map<Character, Integer> counts = new HashMap<>();
         for (Iterator<String> it = a.iterator(); it.hasNext();) {
             String i = it.next();
             char[] dst = new char[i.length()];
@@ -52,42 +51,58 @@ public class Homework_5 {
             for (int j = 0; j < dst.length; j++) {
                 if (!counts.containsKey(dst[j])) {
                     counts.put(dst[j], 1);
-                }
-                else{
+                } else {
                     counts.put(dst[j], counts.get(dst[j]) + 1);
                 }
             }
         }
         Set<Map.Entry<Character, Integer>> countSet = counts.entrySet();
         System.out.println("Character Occurences:");
-        for(Iterator<Map.Entry<Character, Integer>> pit = countSet.iterator(); pit.hasNext();){
+        for (Iterator<Map.Entry<Character, Integer>> pit = countSet.iterator(); pit.hasNext();) {
             Map.Entry<Character, Integer> k = pit.next();
             System.out.println(k.getKey() + ": " + k.getValue());
         }
     }
 
-    
     private static void testPerson() {
         Scanner s = new Scanner(System.in);
         int input = 0;
-        do{
+        Student p = new Student("Hunter Stewart", 
+                "3507 Wellspring lake drive," + " \nFulshear, TX 77441",
+                "7138555655",
+                "hstewart@tamu.edu",
+                Class_Status.SOPHOMORE);
+        Faculty q = new Faculty("Donald Trump",
+                "3506 Wellspring lake drive, \nFulshear, TX 77441",
+                "7138555655", 
+                "dtrump@makeAmericaGreatAgain.gov", 265, 7.25, new myDate(), "It's time now", "CEO");
+        Staff r = new Staff("Donald Trump",
+                "3506 Wellspring lake drive, \nFulshear, TX 77441",
+                "7138555655", 
+                "dtrump@makeAmericaGreatAgain.gov", 265, 7.25, new myDate(), "President");
+        
+        System.out.println(p + "\n" + q + "\n" + r);
+        do {
             System.out.println("Please Select an option: \n1-Add Student \n2-Add Faculty \n3-Add Staff \n4-View Details");
-            switch(input){
+            input = s.nextInt();
+            switch (input) {
                 case 1:
+
                     break;
                 case 2:
                     break;
                 case 3:
                     break;
                 case 4:
-                    switch(input){
+                    switch (input) {
                         case 1:
                     }
                 default:
             }
-        }while(input != 0);
-        
+        } while (input != 0);
+
     }
+
     /**
      * @param args the command line arguments
      */
@@ -103,9 +118,7 @@ public class Homework_5 {
         System.out.println("Average Number of Characters per word: " + avgChar);
         printAlliterations(frankenstein, nonAllit);
         countChars(frankenstein);
-        Person p = new Student("Hunter Stewart", "3507 Wellspring lake drive, \nFulshear, TX 77441", "7138555655", "hstewart@tamu.edu", Class_Status.SOPHOMORE);
-        System.out.println(p);
-        //testPerson();
+        testPerson();
     }
 
     static String[] words = {"YOU", "WILL", "REJOICE", "TO", "HEAR", "THAT", "NO", "DISASTER", "HAS",
@@ -278,5 +291,4 @@ public class Homework_5 {
         "THOUGHTS", "TO", "PAPER"
     };
 
-    
 }

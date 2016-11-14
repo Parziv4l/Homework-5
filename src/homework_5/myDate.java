@@ -12,11 +12,11 @@ import java.util.Date;
  * @author NicKLz
  */
 public class myDate {
+
     Date hiredDate;
-    
-    public void setDate(long elapsedTIme){
-        
+
+    public void setDate(long elapsedTIme) {
+
     }
-    
-    
+
 }

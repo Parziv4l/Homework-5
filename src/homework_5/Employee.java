@@ -15,7 +15,7 @@ public abstract class Employee extends Person {
 
     protected int office;
     protected double salary;
-    protected Date hired;
+    protected myDate hired;
 
     public int getOffice() {
         return this.office;
@@ -25,22 +25,15 @@ public abstract class Employee extends Person {
         return this.salary;
     }
 
-    public Date getDateHired() {
+    public myDate getDateHired() {
         return this.hired;
     }
+
+    @Override
+    abstract public String toString();
+
     
-    public String toString(){return super.toString() + "\nOffice: " + this.office + "\nSalary: " + this.salary + "\nDate Hired: " + this.hired;}
+
     
-    public class Faculty extends Employee {
-        String officeHours, rank;
-            
-        public String toString(){return super.toString() + "\noffice Hours: " + this.officeHours + "\nRank: " +this.rank;}
-    }
-    
-    public class Staff extends Employee{
-        String title;
-    
-        public String toString(){return super.toString() + "\nTitle: " + this.title;}
-    }   
 
 }
