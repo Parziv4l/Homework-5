@@ -25,8 +25,12 @@ public abstract class Employee extends Person {
         return this.salary;
     }
 
-    public myDate getDateHired() {
-        return this.hired;
+    public String getDateHired() {
+        return this.hired.dateString();
+    }
+    
+    public void setDate(int month, int day, int year){
+        hired.setDate(month, day, year);
     }
 
     @Override

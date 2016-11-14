@@ -5,7 +5,8 @@
  */
 package homework_5;
 
-import java.util.Date;
+import java.text.DateFormat;
+import java.util.GregorianCalendar;
 
 /**
  *
@@ -13,10 +14,12 @@ import java.util.Date;
  */
 public class myDate {
 
-    Date hiredDate;
+    GregorianCalendar hiredDate;
+    String month,day,year;
 
-    public void setDate(long elapsedTIme) {
-
+    public void setDate(int m, int d, int y) {
+        this.hiredDate.set(y, m, d);
     }
+    public String dateString(){return hiredDate.toString();}
 
 }

@@ -83,21 +83,52 @@ public class Homework_5 {
         
         System.out.println(p + "\n" + q + "\n" + r);
         do {
-            System.out.println("Please Select an option: \n1-Add Student \n2-Add Faculty \n3-Add Staff \n4-View Details");
+            System.out.println("Please Select an option: \n1-View Student \n2-View Faculty \n3-View Staff \n0-Exit");
             input = s.nextInt();
             switch (input) {
                 case 1:
-
-                    break;
-                case 2:
-                    break;
-                case 3:
-                    break;
-                case 4:
+                    System.out.println("What information would you like? \n1-Name \n2-Class Status");
+                    input = s.nextInt();
                     switch (input) {
                         case 1:
+                            System.out.println(p);
+                            break;
+                        case 2:
+                            System.out.println(p.getStatus());
+                            break;
                     }
+                    break;
+                case 2:
+                    System.out.println("What information would you like? \n1-Name \n2-Office Hours \n3-Rank \n4-Set Hired Date");
+                    input = s.nextInt();
+                    switch (input) {
+                        case 1:
+                            System.out.println(q);
+                            break;
+                        case 2:
+                            System.out.println(q.getOfficeHours());
+                            break;
+                        case 3:
+                            System.out.println(q.getRank());
+                            break;
+                        case 4:
+                            System.out.println("Please input the hire date in MM/DD/YYYY format: ");
+                            s.useDelimiter("/");
+                            int month = s.nextInt();
+                            int day = Integer.parseInt(s.next());
+                            int year = Integer.parseInt(s.next());
+                            q.setDate(month, day, year);
+                            System.out.println(q.getDateHired());
+                            break;
+                    }
+                    break;
+                case 3:
+                    System.out.println(r);
+                    break;
+                            
+                case 0:
                 default:
+                   break;
             }
         } while (input != 0);
 
