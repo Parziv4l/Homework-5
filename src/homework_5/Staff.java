@@ -13,25 +13,23 @@ import java.util.Date;
  */
 public class Staff extends Employee {
 
-        private String title;
+    private String title;
 
-        public Staff(String nameString, String addressString,
-                String numberString, String mailString,
-                int officeNum, double sal,
-                myDate hireDate, String titleString) {
+    public Staff(String nameString, String addressString,
+            String numberString, String mailString,
+            int officeNum, double sal,
+            myDate hireDate, String titleString) {
+        super(nameString, addressString, numberString, mailString, officeNum, sal, hireDate);
+        this.title = titleString;
 
-            this.name = nameString;
-            this.address = addressString;
-            this.number = numberString;
-            this.email = mailString;
-            this.office = officeNum;
-            this.title = titleString;
-            this.hired = hireDate;
-            this.salary = sal;
-        }
-
-        @Override
-        public String toString() {
-            return "Staff: " + this.name;
-        }
     }
+
+    @Override
+    public String toString() {
+        return "Staff: " + this.name;
+    }
+
+    public String getTitle() {
+        return this.title;
+    }
+}

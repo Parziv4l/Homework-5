@@ -67,34 +67,19 @@ public class Homework_5 {
     private static void testPerson() {
         Scanner s = new Scanner(System.in);
         int input = 0;
-        Student p = new Student("Hunter Stewart", 
+        Student p = new Student("Hunter Stewart",
                 "3507 Wellspring lake drive," + " \nFulshear, TX 77441",
                 "7138555655",
                 "hstewart@tamu.edu",
                 Class_Status.SOPHOMORE);
         Faculty q = new Faculty("Donald Trump",
                 "3506 Wellspring lake drive, \nFulshear, TX 77441",
-                "7138555655", 
-                "dtrump@makeAmericaGreatAgain.gov", 265, 7.25, new myDate(), "It's time now", "CEO");
-        Staff r = new Staff("Donald Trump",
-                "3506 Wellspring lake drive, \nFulshear, TX 77441",
-                "7138555655", 
-                "dtrump@makeAmericaGreatAgain.gov", 265, 7.25, new myDate(), "President");
-        Student v = new Student("Hunter Stewart", 
-                "3507 Wellspring lake drive," + " \nFulshear, TX 77441",
                 "7138555655",
-                "hstewart@tamu.edu",
-                Class_Status.SOPHOMORE);
-        Faculty t = new Faculty("Donald Trump",
+                "dtrump@makeAmericaGreatAgain.gov", 265, 7.25, new myDate(11,8,2016), "Mon-Fri 10-5", "CEO");
+        Staff r = new Staff("Hilary Clinton",
                 "3506 Wellspring lake drive, \nFulshear, TX 77441",
-                "7138555655", 
-                "dtrump@makeAmericaGreatAgain.gov", 265, 7.25, new myDate(), "It's time now", "CEO");
-        Staff u = new Staff("Donald Trump",
-                "3506 Wellspring lake drive, \nFulshear, TX 77441",
-                "7138555655", 
-                "dtrump@makeAmericaGreatAgain.gov", 265, 7.25, new myDate(), "President");
-        
-        System.out.println(p + "\n" + q + "\n" + r);
+                "7138555655",
+                "dtrump@makeAmericaGreatAgain.gov", 265, 7.25, new myDate(11,8,2016), "Not the President");
         do {
             System.out.println("Please Select an option: \n1-View Student \n2-View Faculty \n3-View Staff \n0-Exit");
             input = s.nextInt();
@@ -137,11 +122,30 @@ public class Homework_5 {
                     }
                     break;
                 case 3:
-                    System.out.println(r);
-                    break;  
+                    System.out.println("What information would you like? \n1-Name \n2-Title \n3-Set Hired Date");
+                    input = s.nextInt();
+                    switch (input) {
+                        case 1:
+                            System.out.println(r);
+                            break;
+                        case 2:
+                            System.out.println(r.getTitle());
+                            break;
+                        case 3:
+                            System.out.println("Please input the hire date: \nMonth Hired:  ");
+                            int month = s.nextInt();
+                            System.out.println("Day Hired: ");
+                            int day = s.nextInt();
+                            System.out.println("Year Hired: ");
+                            int year = s.nextInt();
+                            q.setDate(month, day, year);
+                            System.out.println(q.getDateHired());
+                            break;
+                    }
+                    break;
                 case 0:
                 default:
-                   break;
+                    break;
             }
         } while (input != 0);
 
@@ -163,6 +167,7 @@ public class Homework_5 {
         printAlliterations(frankenstein, nonAllit);
         countChars(frankenstein);
         testPerson();
+        
     }
 
     static String[] words = {"YOU", "WILL", "REJOICE", "TO", "HEAR", "THAT", "NO", "DISASTER", "HAS",

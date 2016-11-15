@@ -13,34 +13,27 @@ import java.util.Date;
  */
 public class Faculty extends Employee {
 
-        private String officeHours, rank;
+    private String officeHours, rank;
 
-        public Faculty(String nameString, String addressString,
-                String numberString, String mailString,
-                int officeNum, double sal,
-                myDate hireDate, String officeHrs, String rankString) {
-
-            this.name = nameString;
-            this.address = addressString;
-            this.number = numberString;
-            this.email = mailString;
-            this.office = officeNum;
-            this.rank = rankString;
-            this.officeHours = officeHrs;
-            this.hired = hireDate;
-            this.salary = sal;
-        }
-
-        public String getOfficeHours() {
-            return this.officeHours;
-        }
-
-        public String getRank() {
-            return this.rank;
-        }
-
-        @Override
-        public String toString() {
-            return "Faculty: " + this.name;
-        }
+    public Faculty(String nameString, String addressString,
+            String numberString, String mailString,
+            int officeNum, double sal,
+            myDate hireDate, String officeHrs, String rankString) {
+        super(nameString, addressString, numberString, mailString, officeNum, sal, hireDate);
+        this.rank = rankString;
+        this.officeHours = officeHrs;
     }
+
+    public String getOfficeHours() {
+        return this.officeHours;
+    }
+
+    public String getRank() {
+        return this.rank;
+    }
+
+    @Override
+    public String toString() {
+        return "Faculty: " + this.name;
+    }
+}

@@ -13,7 +13,11 @@ public abstract class Person {
 
     protected String name, address, number, email;
 
-    protected Person() {
+    protected Person(String nameString, String addressString, String numberString, String emailString) {
+        this.name = nameString;
+        this.address = addressString;
+        this.number = numberString;
+        this.email = emailString;
     }
 
     public void setName(String n) {

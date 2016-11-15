@@ -5,17 +5,18 @@
  */
 package homework_5;
 
-
-
 /**
  *
  * @author NicKLz
  */
 public class myDate {
 
-    
-    int month,day,year;
+    int month, day, year;
     String dateString;
+
+    public myDate(int m, int d, int y) {
+        this.setDate(m, d, y);
+    }
 
     public void setDate(int m, int d, int y) {
         this.setDay(d);
@@ -23,27 +24,28 @@ public class myDate {
         this.setYear(y);
         this.setDateString();
     }
-    public String dateString(){return this.dateString;}
 
     private void setDay(int d) {
-        if(d > 0 && d <= 31)
-        this.day = d;
+        if (d > 0 && d <= 31) {
+            this.day = d;
+        }
     }
 
     private void setMonth(int m) {
-        if(m>0 && m <=12)
-        this.month = m;
+        if (m > 0 && m <= 12) {
+            this.month = m;
+        }
     }
 
     private void setYear(int y) {
-       this.year = y;
+        this.year = y;
     }
 
     private void setDateString() {
         this.dateString = month + "/" + day + "/" + year;
     }
-    
-    public String toString(){
+
+    public String toString() {
         return this.dateString;
     }
 

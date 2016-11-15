@@ -14,10 +14,7 @@ public class Student extends Person {
     private final Class_Status status;
 
     public Student(String n, String add, String num, String mail, Class_Status stat) {
-        this.name = n;
-        this.address = add;
-        this.number = num;
-        this.email = mail;
+        super(n, add, num, mail);
         this.status = stat;
     }
 

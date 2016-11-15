@@ -11,11 +11,21 @@ import java.util.Date;
  *
  * @author NicKLz
  */
-public abstract class Employee extends Person {
+public class Employee extends Person {
 
     protected int office;
     protected double salary;
     protected myDate hired;
+
+    public Employee(String nameString, String addressString,
+            String numberString, String mailString,
+            int officeNum, double sal,
+            myDate hireDate) {
+        super(nameString, addressString, numberString, mailString);
+        this.office = officeNum;
+        this.hired = hireDate;
+        this.salary = sal;
+    }
 
     public int getOffice() {
         return this.office;
@@ -26,18 +36,16 @@ public abstract class Employee extends Person {
     }
 
     public String getDateHired() {
-        return this.hired.dateString();
+        return this.hired.toString();
     }
-    
-    public void setDate(int month, int day, int year){
+
+    public void setDate(int month, int day, int year) {
         hired.setDate(month, day, year);
     }
 
     @Override
-    abstract public String toString();
-
-    
-
-    
+    public String toString() {
+        return this.getName();
+    }
 
 }
