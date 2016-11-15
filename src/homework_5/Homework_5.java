@@ -80,6 +80,19 @@ public class Homework_5 {
                 "3506 Wellspring lake drive, \nFulshear, TX 77441",
                 "7138555655", 
                 "dtrump@makeAmericaGreatAgain.gov", 265, 7.25, new myDate(), "President");
+        Student v = new Student("Hunter Stewart", 
+                "3507 Wellspring lake drive," + " \nFulshear, TX 77441",
+                "7138555655",
+                "hstewart@tamu.edu",
+                Class_Status.SOPHOMORE);
+        Faculty t = new Faculty("Donald Trump",
+                "3506 Wellspring lake drive, \nFulshear, TX 77441",
+                "7138555655", 
+                "dtrump@makeAmericaGreatAgain.gov", 265, 7.25, new myDate(), "It's time now", "CEO");
+        Staff u = new Staff("Donald Trump",
+                "3506 Wellspring lake drive, \nFulshear, TX 77441",
+                "7138555655", 
+                "dtrump@makeAmericaGreatAgain.gov", 265, 7.25, new myDate(), "President");
         
         System.out.println(p + "\n" + q + "\n" + r);
         do {
@@ -112,11 +125,12 @@ public class Homework_5 {
                             System.out.println(q.getRank());
                             break;
                         case 4:
-                            System.out.println("Please input the hire date in MM/DD/YYYY format: ");
-                            s.useDelimiter("/");
+                            System.out.println("Please input the hire date: \nMonth Hired:  ");
                             int month = s.nextInt();
-                            int day = Integer.parseInt(s.next());
-                            int year = Integer.parseInt(s.next());
+                            System.out.println("Day Hired: ");
+                            int day = s.nextInt();
+                            System.out.println("Year Hired: ");
+                            int year = s.nextInt();
                             q.setDate(month, day, year);
                             System.out.println(q.getDateHired());
                             break;
@@ -124,8 +138,7 @@ public class Homework_5 {
                     break;
                 case 3:
                     System.out.println(r);
-                    break;
-                            
+                    break;  
                 case 0:
                 default:
                    break;

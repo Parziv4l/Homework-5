@@ -5,8 +5,7 @@
  */
 package homework_5;
 
-import java.text.DateFormat;
-import java.util.GregorianCalendar;
+
 
 /**
  *
@@ -14,12 +13,38 @@ import java.util.GregorianCalendar;
  */
 public class myDate {
 
-    GregorianCalendar hiredDate;
-    String month,day,year;
+    
+    int month,day,year;
+    String dateString;
 
     public void setDate(int m, int d, int y) {
-        this.hiredDate.set(y, m, d);
+        this.setDay(d);
+        this.setMonth(m);
+        this.setYear(y);
+        this.setDateString();
     }
-    public String dateString(){return hiredDate.toString();}
+    public String dateString(){return this.dateString;}
+
+    private void setDay(int d) {
+        if(d > 0 && d <= 31)
+        this.day = d;
+    }
+
+    private void setMonth(int m) {
+        if(m>0 && m <=12)
+        this.month = m;
+    }
+
+    private void setYear(int y) {
+       this.year = y;
+    }
+
+    private void setDateString() {
+        this.dateString = month + "/" + day + "/" + year;
+    }
+    
+    public String toString(){
+        return this.dateString;
+    }
 
 }
