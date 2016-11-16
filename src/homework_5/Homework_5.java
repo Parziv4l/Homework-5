@@ -5,6 +5,7 @@
  */
 package homework_5;
 
+import com.sun.org.apache.xpath.internal.compiler.Keywords;
 import java.util.*;
 import jdk.nashorn.internal.objects.Global;
 
@@ -150,6 +151,28 @@ public class Homework_5 {
         } while (input != 0);
 
     }
+    
+    public static ArrayList<String> bonus(ArrayList<String> f) {
+        Map<String, Integer> words = new HashMap<>();
+        for (Iterator<String> it = f.iterator(); it.hasNext();) {
+            String i = it.next();
+                if (!words.containsKey(i)) {
+                    words.put(i, 1);
+                } else {
+                    words.put(i, words.get(i) + 1);
+                }
+            }
+        Set<Map.Entry<String, Integer>> nonDuplicates = words.entrySet();
+        ArrayList<String> nonDup = new ArrayList<String>();
+        for (Iterator<Map.Entry<String, Integer>> p = nonDuplicates.iterator(); p.hasNext();) {
+            Map.Entry<String, Integer> k = p.next();
+            if(k.getValue() == 1){
+                nonDup.add(k.getKey());
+            }
+            
+        }
+        return nonDup;
+    }
 
     /**
      * @param args the command line arguments
@@ -166,6 +189,12 @@ public class Homework_5 {
         System.out.println("Average Number of Characters per word: " + avgChar);
         printAlliterations(frankenstein, nonAllit);
         countChars(frankenstein);
+        System.out.println("List of non-duplicate words: ");
+        ArrayList<String> bonusArrayList = bonus(frankenstein);
+        for(Iterator<String> i = bonusArrayList.iterator(); i.hasNext();){
+            String s = i.next();
+            System.out.println(s);
+        }
         testPerson();
         
     }
@@ -339,5 +368,7 @@ public class Homework_5 {
         "DEJECTION", "I", "SHALL", "COMMIT", "MY",
         "THOUGHTS", "TO", "PAPER"
     };
+
+    
 
 }
